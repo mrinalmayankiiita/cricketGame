@@ -12,8 +12,8 @@ public class matchstart {
     @Autowired
     private innings in1;
 
-
-    private innings in2= new innings();
+    @Autowired
+    private innings in2;
 
     public void startmatch() {
 
