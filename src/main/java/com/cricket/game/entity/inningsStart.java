@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+//start of an inning
 public class inningsStart {
 
     private final innings in;
@@ -14,6 +15,7 @@ public class inningsStart {
         in.setinnings(id,(Integer) c,(Integer) 0,(Integer) 0,target,(Integer) 0);
     }
     public void startinnings(){
+        // for one inning the main part where the random runs and wickets are increasing
         while(in.getBallplayed()<= 120 && in.getTotalWicket()<10 && in.getTotalRun()<in.getTarget()){
             int runperball=ThreadLocalRandom.current().nextInt(0,8);
             in.increaseBall();

@@ -1,10 +1,14 @@
 package com.cricket.game.entity;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.aggregation.ArrayOperators;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
+@Document(collection = "teams")
 public class team {
+    @Id
     private Integer teamId;
     private String teamName;
     private List<player> teamPlayers;

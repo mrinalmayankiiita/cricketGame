@@ -1,6 +1,7 @@
 package com.cricket.game.entity;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "player")
@@ -8,10 +9,13 @@ public class player {
     @Id
     private Integer id;
     private String name;
-    private String team;
+    private team team;
     private String type;
+    @Indexed(name = "totalrun")
     private Integer runScored;
+    private Integer centuries;
     private Integer playingInAt;
+    @Indexed(name = "totalwicket")
     private Integer wicketTaken;
 
     public String getType() {
@@ -57,11 +61,11 @@ public class player {
     private Integer noOfMatches;
     private Integer noOfInnings;
 
-    public String getTeam() {
+    public team getTeam() {
         return team;
     }
 
-    public void setTeam(String team) {
+    public void setTeam(team team) {
         this.team = team;
     }
 
@@ -88,4 +92,13 @@ public class player {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Integer getCenturies() {
+        return centuries;
+    }
+
+    public void setCenturies(Integer centuries) {
+        this.centuries = centuries;
+    }
+
 }

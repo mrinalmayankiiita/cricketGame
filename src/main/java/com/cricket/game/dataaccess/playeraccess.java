@@ -24,9 +24,13 @@ public class playeraccess {
         return playerData.findById(id);
     }
 
+    public player updatePlayer(player p1){
+        return playerData.save(p1);
+    }
     public Optional<player> deletePlayerById(int id) {
         Optional<player> p1 = playerData.findById(id);
         p1.ifPresent(b -> playerData.delete(b));
         return p1;
     }
+
 }

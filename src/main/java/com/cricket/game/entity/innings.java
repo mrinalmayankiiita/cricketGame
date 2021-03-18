@@ -2,6 +2,7 @@ package com.cricket.game.entity;
 
 import org.springframework.stereotype.Component;
 
+//class for one inning
 @Component
 public class innings {
     private Integer inNo;

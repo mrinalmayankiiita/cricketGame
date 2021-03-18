@@ -1,5 +1,6 @@
 package com.cricket.game.entity;
 
+//score of whole match
 public class matchScore {
     private Integer runsbyteam1,runsbyteam2;
     private Integer wicketsteam1,wicketsteam2;

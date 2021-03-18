@@ -14,25 +14,47 @@ import java.util.Optional;
 @RequestMapping("player")
 public class playerController {
     @Autowired
-    private playerService Playerser;
-
+    private playerService Playerservice;
+    //get list of all player
     @GetMapping
-    public Collection<player> getPlayer(){ return Playerser.getPlayer();}
-
+    public Collection<player> getPlayer(){ return Playerservice.getPlayer();}
+    //create a player
     @PostMapping
     public player postplayer(@RequestBody player player) {
-        return Playerser.createPlayer(player);
+        return Playerservice.createPlayer(player);
     }
-
+    //get a player by id
     @GetMapping(value="/{id}")
     public Optional<player> getplayerById(@PathVariable("id") int id) {
-        return Playerser.getPlayerById(id);
+        return Playerservice.getPlayerById(id);
     }
 
+    //delete a player by id
     @DeleteMapping(value="/{id}")
     public Optional<player> deleteplayerById(@PathVariable("id") int id) {
-        return Playerser.deletePlayerById(id);
+        return Playerservice.deletePlayerById(id);
     }
 
+    //update a player
+    @GetMapping("/update")
+    public player update(player p1){
+        return Playerservice.updatePlayer(p1);
+    }
+    // find top3 batsman based on total runs
+    @GetMapping("/top3batsman")
+    public List<player> getTop3Batsman(){
+        return Playerservice.findtop3batsman();
+    }
+    // find best 3 bowlers based on total wickets
+    @GetMapping("/top3bowler")
+    public List<player> getTop3Bowler(){
+        return Playerservice.findtop3bowler();
+    }
+
+    // find batsman who have made atleast one centuries.
+    @GetMapping("findCenturians")
+    public List<player> getCenturyPlayers(){
+        return Playerservice.findCenturians();
+    }
 
 }
