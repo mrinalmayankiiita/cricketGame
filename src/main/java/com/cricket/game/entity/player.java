@@ -9,7 +9,7 @@ public class player {
     @Id
     private Integer id;
     private String name;
-    private team team;
+    private String team;
     private String type;
     @Indexed(name = "totalrun")
     private Integer runScored;
@@ -61,11 +61,11 @@ public class player {
     private Integer noOfMatches;
     private Integer noOfInnings;
 
-    public team getTeam() {
+    public String getTeam() {
         return team;
     }
 
-    public void setTeam(team team) {
+    public void setTeam(String team) {
         this.team = team;
     }
 
