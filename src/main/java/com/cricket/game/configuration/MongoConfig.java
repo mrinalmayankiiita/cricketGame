@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
+
 
 @Configuration
 public class MongoConfig {
@@ -27,5 +27,6 @@ public class MongoConfig {
         return mongoTemplate;
 
     }
+
 
 }

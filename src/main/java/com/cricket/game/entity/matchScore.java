@@ -1,6 +1,10 @@
 package com.cricket.game.entity;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 //score of whole match
+
 public class matchScore {
     private Integer runsbyteam1,runsbyteam2;
     private Integer wicketsteam1,wicketsteam2;
@@ -14,6 +18,9 @@ public class matchScore {
         this.wicketsteam2 = wicketsteam2;
         this.team1 = teamid1;
         this.team2 = team1d2;
+    }
+    public matchScore(){
+
     }
 
     public Integer getRunsbyteam1() {

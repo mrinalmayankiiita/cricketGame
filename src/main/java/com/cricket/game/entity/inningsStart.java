@@ -1,10 +1,12 @@
 package com.cricket.game.entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ThreadLocalRandom;
 
 //start of an inning
+
 public class inningsStart {
 
     private final innings in;

@@ -2,18 +2,21 @@ package com.cricket.game.entity;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.concurrent.ThreadLocalRandom;
 
 //starting a match
 @Service
 public class matchstart {
-    @Autowired
-    private innings in1;
 
-    @Autowired
-    private innings in2;
+
+    private innings in1= new innings();
+
+
+    private innings in2 = new innings();
 
     public void startmatch() {
 
@@ -25,7 +28,7 @@ public class matchstart {
         ins2.startinnings();
 
         matchScore newmatchScore = new matchScore(in1.getTotalRun(), in2.getTotalRun(), in1.getTotalWicket(),in2.getTotalWicket(),c,3-c);
-
+        System.out.println(newmatchScore.getRunsbyteam1()+ " "+ newmatchScore.getRunsbyteam2());
         matchsummary newsummary = new matchsummary();
         System.out.println(newsummary.getWinner(newmatchScore));
 

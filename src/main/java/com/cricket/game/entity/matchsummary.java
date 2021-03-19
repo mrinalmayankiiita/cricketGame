@@ -4,12 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 //match summary
+
 public class matchsummary {
     private String winner;
-    @Autowired
+
+
     private matchScore sc;
-    //private innings in;
-    //private matchScore matchScore;
+
 
     public String getWinner(matchScore sc){ // to decide who is winner of the match
         this.sc=sc;

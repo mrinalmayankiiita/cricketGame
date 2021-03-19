@@ -3,7 +3,7 @@ package com.cricket.game.entity;
 import org.springframework.stereotype.Component;
 
 //class for one inning
-@Component
+@Component(value = "in1,in2")
 public class innings {
     private Integer inNo;
     private Integer teamIdPlaying;
