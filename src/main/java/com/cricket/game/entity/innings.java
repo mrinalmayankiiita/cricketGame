@@ -1,9 +1,11 @@
 package com.cricket.game.entity;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 //class for one inning
-@Component(value = "in1,in2")
+@Component
+@Scope("prototype")
 public class innings {
     private Integer inNo;
     private Integer teamIdPlaying;

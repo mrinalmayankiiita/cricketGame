@@ -15,18 +15,7 @@ public class MongoConfig {
     @Autowired
     private Environment env;
 
-    @Bean
-    public MongoDbFactory mongoDbFactory() {
-        return new SimpleMongoDbFactory(new MongoClientURI(env.getProperty("spring.data.mongodb.uri")));
-    }
 
-    @Bean
-    public MongoTemplate mongoTemplate() {
-        MongoTemplate mongoTemplate = new MongoTemplate(mongoDbFactory());
-
-        return mongoTemplate;
-
-    }
 
 
 }
